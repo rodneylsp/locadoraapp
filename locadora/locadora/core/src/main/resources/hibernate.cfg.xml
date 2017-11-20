@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+		<!-- configuracao de conexao do banco de dados -->
+		<property name="connection.driver_class">org.postgresql.Driver</property>
+		<property name="connection.url">jdbc:postgresql://localhost:5432/db_locadora</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+
+		<!-- dialeto SQL -->
+		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+		<!-- desabilitando o second level cache -->
+		<!-- <property name="cache.provider_class"></property> -->
+
+		<!-- exibindo o SQL no stdout -->
+		<property name="show_sql">true</property>
+		
+		<mapping class="br.com.locadoraapp.core.modelo.Ator"/>
+		<mapping class="br.com.locadoraapp.core.modelo.Filme"/>
+
+	</session-factory>
+</hibernate-configuration>
