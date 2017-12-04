@@ -3,9 +3,6 @@ package br.com.locadoraapp.core.business;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.Before;
-import org.junit.Test;
-
 import br.com.locadoraapp.core.modelo.Ator;
 
 public class AtorBusinessTest {
