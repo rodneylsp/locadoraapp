@@ -3,8 +3,6 @@ package br.com.locadoraapp.core.business;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.Session;
-
 import br.com.locadoraapp.core.hibernate.dao.AtorDAOImpl;
 import br.com.locadoraapp.core.hibernate.dao.IAtorDAO;
 import br.com.locadoraapp.core.modelo.Ator;
@@ -19,11 +17,6 @@ public class AtorBusiness implements IAtorBusiness{
 		dao = new AtorDAOImpl();
 	}
 	
-	public AtorBusiness(Session session) {
-		super();
-		
-		dao = new AtorDAOImpl(session);
-	}
 
 	@Override
 	public Ator inserir(Ator object) {

@@ -1,0 +1,13 @@
+<dataset>
+
+	<ator
+		ator_id = "1"
+		ator_nome = "Mel Gibson">
+	</ator>
+	
+	<ator
+		ator_id = "2"
+		ator_nome = "Danny Glover">
+	</ator>
+		
+</dataset>

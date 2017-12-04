@@ -1,8 +1,7 @@
 package br.com.locadoraapp.core.business;
 
 import static org.junit.Assert.assertEquals;
-
-import java.util.List;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -16,28 +15,28 @@ public class AtorBusinessTest {
 	private final String ATOR = "Keanu Reeves";
 	
 	
-	@Before
+	//@Before
 	public void before() {
 		
 		business = new AtorBusiness();
-		
 	}
 
-	@Test
-	public void testarCRUD() {
-		
+	//@Test
+	public void testarinserirComSucesso() {
 		
 		Ator atorInserido  = business.inserir(new Ator(ATOR));
-		
-		List<Ator> atores = business.listar();
-		
-		Ator atorRecuperado = business.getAtor(atorInserido.getId());
-		assertEquals(ATOR, atorRecuperado.getNome());
-		
-		business.excluir(atorInserido);
-		
-		assertEquals(1, atores.size());
-		
-		
+		assertNotNull(atorInserido.getId());
+
 	}
+	
+	
+	//@Test
+	public void testarConsultarAtorComSucesso() {
+		
+		Ator atorRecuperado = business.getAtor(1L);
+		assertEquals(ATOR, atorRecuperado.getNome());
+	
+	}
+
+
 }

@@ -9,7 +9,7 @@
 
 		<!-- configuracao de conexao do banco de dados -->
 		<property name="connection.driver_class">org.postgresql.Driver</property>
-		<property name="connection.url">jdbc:postgresql://localhost:5432/db_locadora</property>
+		<property name="connection.url">jdbc:postgresql://localhost:5432/db_locadora_teste</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">root</property>
 
@@ -22,8 +22,12 @@
 		<!-- exibindo o SQL no stdout -->
 		<property name="show_sql">true</property>
 		
+		<property name="hbm2ddl.auto">create</property>
+		
 		<mapping class="br.com.locadoraapp.core.modelo.Ator"/>
+		<!-- 
 		<mapping class="br.com.locadoraapp.core.modelo.Filme"/>
+		-->
 
 	</session-factory>
 </hibernate-configuration>

@@ -23,6 +23,7 @@ public class AtorDAOImpl extends DAO<Ator> implements IAtorDAO {
 		super();
 		sessao = session;
 	}
+	
 
 	@SuppressWarnings("unchecked")
 	@Override
