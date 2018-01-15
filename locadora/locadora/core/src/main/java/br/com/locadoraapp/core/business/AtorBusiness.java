@@ -17,11 +17,21 @@ public class AtorBusiness implements IAtorBusiness{
 		dao = new AtorDAOImpl();
 	}
 	
+	public AtorBusiness(IAtorDAO dao) {
+		
+		
+		this.dao = dao;
+	}
+	
 
 	@Override
-	public Ator inserir(Ator object) {
+	public Ator inserir(Ator ator) {
 		
-		Ator atorGravado = dao.inserir(object);
+		if(ator == null) {
+			throw new IllegalArgumentException("Objeto nulo");
+		}
+		
+		Ator atorGravado = dao.inserir(ator);
 		
 		return atorGravado;
 	}
