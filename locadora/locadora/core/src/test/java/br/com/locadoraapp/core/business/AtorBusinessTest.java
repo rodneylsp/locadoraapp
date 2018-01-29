@@ -7,6 +7,8 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 
+import br.com.locadoraapp.core.exception.DadoObrigatorioException;
+import br.com.locadoraapp.core.exception.LocadoraAppException;
 import br.com.locadoraapp.core.hibernate.dao.AtorDAOImpl;
 import br.com.locadoraapp.core.hibernate.dao.IAtorDAO;
 import br.com.locadoraapp.core.modelo.Ator;
@@ -28,11 +30,10 @@ public class AtorBusinessTest {
 				
 	}
 
-	@Test
-	public void testarInserirComAtorSemNome() {
+	@Test(expected=DadoObrigatorioException.class)
+	public void testarInserirComAtorSemNome()throws LocadoraAppException {
 		
 		Ator ator = null;  
-		
 		business.inserir(ator);
 		Mockito.verify(atorDAO, Mockito.times(1)).inserir(ator);
 
@@ -43,7 +44,11 @@ public class AtorBusinessTest {
 		
 		Ator ator = new Ator(ATOR);  
 		
-		business.inserir(ator);
+		try {
+			business.inserir(ator);
+		} catch (LocadoraAppException e) {
+			e.printStackTrace();
+		}
 		Mockito.verify(atorDAO, Mockito.times(1)).inserir(ator);
 
 	}

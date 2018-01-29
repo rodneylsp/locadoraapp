@@ -25,9 +25,7 @@
 		<property name="hbm2ddl.auto">create</property>
 		
 		<mapping class="br.com.locadoraapp.core.modelo.Ator"/>
-		<!-- 
 		<mapping class="br.com.locadoraapp.core.modelo.Filme"/>
-		-->
 
 	</session-factory>
 </hibernate-configuration>

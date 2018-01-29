@@ -10,4 +10,6 @@ public interface IDAO<T> {
 	public void excluir(T objeto);
 	
 	public List<T> getAll();
+	
+	public T alterar(T objeto);
 }

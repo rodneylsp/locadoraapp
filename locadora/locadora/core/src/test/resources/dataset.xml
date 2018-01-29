@@ -9,5 +9,23 @@
 		ator_id = "2"
 		ator_nome = "Danny Glover">
 	</ator>
+	
+	<filme
+		film_id = "1"
+  		film_titulo = "Matrix"
+  		film_sinopse = "Matrix sinopse"
+  		film_genero = "10"
+  		film_lancamento = "1999">
+	
+	</filme>
+	
+	<filme
+		film_id = "2"
+  		film_titulo = "Predador, O"
+  		film_sinopse = "Predador sinopse"
+  		film_genero = "10"
+  		film_lancamento = "1986">
+	
+	</filme>
 		
 </dataset>

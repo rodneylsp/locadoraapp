@@ -21,10 +21,27 @@ public class AtorDAOTest extends HibernateDbUnitTestCase{
 		final String nomeAtor = "Danny Glover";
 		
 		dao = new AtorDAOImpl(session);
+		
 		Ator atorGravado = dao.inserir(new Ator(nomeAtor));
 		
 		assertNotNull(atorGravado);
 	}
+	
+	
+	@Test
+	public void testAtualizar() {
+		
+		dao = new AtorDAOImpl(session);
+		
+		Ator ator = dao.getAtor(1L);
+		assertEquals("Mel Gibson", ator.getNome());
+		
+		ator.setNome("Charlie Sheen");
+		Ator atorAlterado = dao.alterar(ator);		
+		assertEquals("Charlie Sheen", atorAlterado.getNome());
+		
+	}
+	
 	
 	@Test
 	public void testarPesquisa() {

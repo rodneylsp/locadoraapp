@@ -3,13 +3,17 @@ package br.com.locadoraapp.core.modelo;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Entity
 @Table(name="filme")
@@ -28,12 +32,16 @@ public class Filme {
 	private String sinopse;
 	
 	@Column(name="film_genero")
+	@Convert(converter=GeneroConverter.class)
 	private GeneroEnum genero;
 	
 	@Column(name="film_lancamento")
 	private Integer anoLancamento;
 	
-	@Transient
+	@ManyToMany(fetch=FetchType.LAZY)
+	@JoinTable(name="filme_ator", 
+		joinColumns= {@JoinColumn(name="film_id")},
+		inverseJoinColumns= {@JoinColumn(name="ator_id")})
 	private List<Ator> elenco;
 	
 	

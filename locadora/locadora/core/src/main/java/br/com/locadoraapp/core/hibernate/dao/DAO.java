@@ -100,6 +100,15 @@ public abstract class DAO<T> implements IDAO<T>{
 		getSession().close();
 		DAO.session.set(null);
 	}
+	
+	public T alterar(T object) {
+		
+		begin();
+		getSession().merge(object);
+		commit();
+		
+		return object;
+	}
 
 	
 	public abstract List<T> getAll();
