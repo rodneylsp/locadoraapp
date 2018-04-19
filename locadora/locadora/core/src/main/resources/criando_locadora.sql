@@ -17,7 +17,7 @@ CREATE TABLE filme(
 film_id serial PRIMARY KEY,
 film_titulo character varying(100),
 film_sinopse character varying(2000),
-film_genero smallint CONSTRAINT generos CHECK film_genero in (1,2,3,4,5,6,7,8,9,10),
+film_genero smallint CONSTRAINT generos CHECK (film_genero in (1,2,3,4,5,6,7,8,9,10)),
 film_lancamento integer
 );
 
@@ -41,4 +41,4 @@ CREATE TABLE filme_ator
   CONSTRAINT fk_filme FOREIGN KEY (filme_id)
       REFERENCES filme (film_id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
-)
+);
